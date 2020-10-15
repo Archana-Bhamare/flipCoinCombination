@@ -64,3 +64,50 @@ echo "$percentage3%"
 percentage4=`echo ${flipcoin[@]} | awk '{print ($4/5)*100}'`
 echo ${!flipcoin[@]} | awk '{print $4}'
 echo "$percentage4%"
+echo "---Triplet Combination---"
+declare -A flipcoin1
+coin=3
+H=0
+T=0
+for ((i=1;i<=15;i++))
+do
+	word=""
+	for ((j=0;j<$coin;j++))
+	do
+		random=$((RANDOM%2))
+		if [  $random -eq 1 ]
+		then
+			word=$word"H"
+		else
+			word=$word"T"
+		fi
+	done
+	echo "Flip coin : $word"
+	flipcoin1[$word]=$(( ${flipcoin1[$word]} + 1 ))
+done
+echo "Key: ${!flipcoin1[@]}"
+echo "Number of occurences : ${flipcoin1[@]}"
+percentage=`echo ${flipcoin1[@]} | awk '{print ($1/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $1}'
+echo "$percentage%"
+percentage2=`echo ${flipcoin1[@]} | awk '{print ($2/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $2}'
+echo "$percentage2%"
+percentage3=`echo ${flipcoin1[@]} | awk '{print ($3/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $3}'
+echo "$percentage3%"
+percentage4=`echo ${flipcoin1[@]} | awk '{print ($4/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $4}'
+echo "$percentage4%"
+percentage5=`echo ${flipcoin1[@]} | awk '{print ($5/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $5}'
+echo "$percentage5%"
+percentage6=`echo ${flipcoin1[@]} | awk '{print ($6/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $6}'
+echo "$percentage6%"
+percentage7=`echo ${flipcoin1[@]} | awk '{print ($7/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $7}'
+echo "$percentage7%"
+percentage8=`echo ${flipcoin1[@]} | awk '{print ($8/15)*100}'`
+echo ${!flipcoin1[@]} | awk '{print $8}'
+echo "$percentage8%"
