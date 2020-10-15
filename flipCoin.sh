@@ -1,5 +1,12 @@
 #!/bin/bash -x
-#"---Singlet Combination---"
+random=$((RANDOM%2))
+if [ $random -eq 0 ]
+then
+	echo "Head"
+else
+	echo "Tail"
+fi
+echo "---Singlet Combination---"
 head=0
 count=0
 declare -A coin
