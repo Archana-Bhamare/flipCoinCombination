@@ -6,6 +6,7 @@ then
 else
 	echo "Tail"
 fi
+echo ""
 echo "---Singlet Combination---"
 head=0
 count=0
@@ -29,6 +30,8 @@ percentage=`echo $head | awk '{print ($1/5)*100}'`
 echo "Percentage of Head : $percentage%"
 percentage2=`echo $tail | awk '{print ($1/5)*100}'`
 echo "Percentage of Tail : $percentage2%"
+echo $( printf "%s\n" "Sort Combination : ${coin[@]}" | sort -n)
+echo ""
 echo "---Doublet Combination---"
 declare -A flipcoin
 coin=2
@@ -64,6 +67,8 @@ echo "$percentage3%"
 percentage4=`echo ${flipcoin[@]} | awk '{print ($4/5)*100}'`
 echo ${!flipcoin[@]} | awk '{print $4}'
 echo "$percentage4%"
+echo $( printf "%s\n" "Sort Combination :${flipcoin[@]}" | sort -n)
+echo ""
 echo "---Triplet Combination---"
 declare -A flipcoin1
 coin=3
@@ -111,3 +116,4 @@ echo "$percentage7%"
 percentage8=`echo ${flipcoin1[@]} | awk '{print ($8/15)*100}'`
 echo ${!flipcoin1[@]} | awk '{print $8}'
 echo "$percentage8%"
+echo $( printf "%s\n" "Sort Combination :${flipcoin1[@]}" | sort -n)
